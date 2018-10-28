@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include <vector>
 
+// Utilitzem aquestes comandes per estalbiar posar cv:: , std::
+
 using namespace cv;
 using namespace std;
 
@@ -24,9 +26,14 @@ int main(int argc, char *argv[])
     orb_detector->setMaxFeatures(MIN_NUM_FEATURES);
     std::vector<cv::KeyPoint> point_set; //set of point features
     cv::Mat descriptor_set; //set of descriptors, for each feature there is an associated descriptor
+
+    // Declarem les variables Mat que utilitzarem per poder crear Feature points en un rectangle de la imatge
+
     cv::Mat grayimage;
     cv::Mat Mask;
     cv::Mat roi;
+
+    // Variables que s'han creat per fer un escanejat dels Feature points amb una Mascara (Estan bloquejats perque no ha funcionat el programa)
 
 /*
     int h_division;
@@ -42,9 +49,7 @@ int main(int argc, char *argv[])
 
 */
 
-    Scalar Color = Scalar(0,255,0); //Canvi de color Scalar(0,255,0)-> Green
-
-	//check user args
+  //check user args
 	switch(argc)
 	{
 		case 1: //no argument provided, so try /dev/video0
@@ -85,20 +90,26 @@ int main(int argc, char *argv[])
 
         cv::cvtColor( image, grayimage, CV_BGR2GRAY );
 
+        // Assignar una variable Color (D'aquesta manera podem triar el color de les Keypoints)
+
+        Scalar Color = Scalar(0,255,0); //Assignar a la variable Color el color verd "Scalar(0,255,0)-> Green"
+
         //clear previous points
         point_set.clear();
 
-        Mat Mask = Mat::zeros(image.size(), CV_8U); // Possem 0 a tota la imatge
+        // Assignem a la Mascara (Mask, que es una mascara de tota la imatge) a valors 0
+
+        Mat Mask = Mat::zeros(image.size(), CV_8U);
 
         // Comanda per poder moure una Mascara dins la imatge
 
         Mat roi(Mask, cv::Rect(250,150,220,300)); // Només visualitzem KeyPoints en aquest Rectangle, Rect(X_position, Y_position, Mask_width, Mask_Height)
 
-        // Hem col·locat el rectangle perque nomes detecti la zona central de la webcam (Cara)
-        
+        // Hem col·locat el rectangle perque nomes detecti la zona central de la webcam (Cara) valors (250,150,220,300)
+
         roi = Scalar(255);
 
-        //El codi per fer un detectAndCompute de tota la imatge amb una Mascara
+        //Aquest es el codi per fer un escanejat dels Feature points amb una Mascara (Es divideix la imatge amb 12 rectangles) -> No funciona
 
 /*
         n_cols = image.cols;
