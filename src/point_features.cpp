@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
     cv::Mat Mask;
     cv::Mat roi;
 
+    cv::Mat edge;
+    cv::Mat draw;
+
     // Variables que s'han creat per fer un escanejat dels Feature points amb una Mascara (Estan bloquejats perque no ha funcionat el programa)
 
 /*
@@ -144,10 +147,20 @@ int main(int argc, char *argv[])
         //draw points on the image
         cv::drawKeypoints(grayimage, point_set, grayimage, Color, cv::DrawMatchesFlags::DEFAULT );
 
+        // Programa per crear el contorn de la imatge (Canny)
+
+        Canny(grayimage, edge, 50, 150, 3);
+
+        edge.convertTo(draw, CV_8U);
+
+
     //********************************************************************
 
-        //show image
+        //Mostrem imatge amb escala de grisos i amb els Features points en la imatge
         cv::imshow("Output Window", grayimage);
+
+        //Mostrem imatge el contorn de la imatge
+        cv::imshow("Output Window1", draw);
 
 		//Waits 30 millisecond to check if 'q' key has been pressed. If so, breaks the loop. Otherwise continues.
     	if( (unsigned char)(cv::waitKey(30) & 0xff) == 'q' ) break;
