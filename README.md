@@ -1,4 +1,17 @@
-# webcam_point_features Program
+# Definició de ORB Features
+
+La definició de ORB es una eina que s'utilitza en el sistema de "computer vision" i serveix per detectar rapidament punts de contrast en una imatge. Es a dir, es capaç de trobar x punts en una imatge que tingui un contrast bastant elevat. Això pot permetre la reconstrucció d'objectes.
+
+Dins del sistema ORB hi ha moltes comandes per poder aconseguir diferents resultats. En aquest projecte hem aconseguit concentrar la búsqueda d'aquests features points en una zona concreta.
+
+Una altre definició important en aquest ambit es el KeyPoints que en aquest projecte tambe sútilitza. Aquesta eina es la que dibuixa els punts trobat per la eina ORB Detector. Pots cambiar el Color i altre variables. En aquest projecte només canviem el color dels punts.
+
+Les comandes que s'han utilitzat són:
+
+``` bash orb_detector->detectAndCompute(grayimage, Mask, point_set, descriptor_set);```
+``` bash cv::drawKeypoints(grayimage, point_set, grayimage, Color, cv::DrawMatchesFlags::DEFAULT );```
+
+# Webcam_point_features program
 
 Detecció dels ORB features de la webcam del PC.
 
@@ -11,7 +24,7 @@ Un cop creat la nostre carpeta de treball comencem a realitzar modificacions en 
 
 La primera modificació que fem es pasar la imatge amb color a una escala de grisos
 
-``` bash cv::Mat grayimage; bash```
+``` bash cv::Mat grayimage;```
 ``` bash cv::cvtColor( image, grayimage, CV_BGR2GRAY );```
 
 Abans de començar a crear la màscara fem proves per cambiar el color de les KeyPoints
@@ -20,14 +33,14 @@ Declarem una variable Color que es "Scalar" i definim la intencitat de cada un d
 
 En el nostre cas posem el valor (0,255,0) que es el color Green
 
-``` bash Scalar Color = Scalar(0,255,0); bash```
+``` bash Scalar Color = Scalar(0,255,0);```
 
 Per poder realitzar una zona exclusiva dins la imatge per posar els KeyPoints ho fem a través d'una mascara i una variable roi
 
 A continuació es veuen les dos comandes que fem per realitzar un escaneig dels features points amb una mascar en forma de rectangle
 
-``` bash cv::Mat Mask; bash```
-``` bash cv::Mat roi; bash```
+``` bash cv::Mat Mask;```
+``` bash cv::Mat roi;```
 
 En aquest punt hem creat les variables que utilitzarem
 
