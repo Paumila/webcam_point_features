@@ -58,6 +58,14 @@ Un cop realitzades aquestes comandes compilem per veure que no hi hagi cap error
 
 El resultat és la imatge de la web cam amb escala de grisos i una zona central de la imatge on només apareixen els KeyPoints. Aquesta zona és la que hem definit amb la posició + tamany del rectangle
 
+El programa també disposa d'un detector de contorns amb la comanda Canny, s'ha buscat un exemple de com utilitzar la comanda Canny
+
+
+```Canny(grayimage, edge, 50, 150, 3);```
+```edge.convertTo(draw, CV_8U);```
+
+En aquest cas mostrarem a la pantalla la imatge "draw" que és la que està procesada per detectar els contorns        
+
 # Used References
 
 Aqui adjuntem les principals referencies que hem utilitzat per poder realitzar aquesta modificació en el programa webcam_point_features
@@ -73,6 +81,8 @@ Aqui adjuntem les principals referencies que hem utilitzat per poder realitzar a
 <li>https://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html</li>
 
 <li>http://answers.opencv.org/question/10364/set-roi-in-cvmat/</li>
+
+<li>http://opencvexamples.blogspot.com/2013/10/void-canny-inputarray-image-outputarray.html</li>
 
 </ol>
 
