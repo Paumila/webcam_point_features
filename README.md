@@ -8,8 +8,8 @@ Una altre definició important en aquest ambit es el KeyPoints que en aquest pro
 
 Les comandes que s'han utilitzat són:
 
-``` bash orb_detector->detectAndCompute(grayimage, Mask, point_set, descriptor_set);```
-``` bash cv::drawKeypoints(grayimage, point_set, grayimage, Color, cv::DrawMatchesFlags::DEFAULT );```
+```orb_detector->detectAndCompute(grayimage, Mask, point_set, descriptor_set);```
+```cv::drawKeypoints(grayimage, point_set, grayimage, Color, cv::DrawMatchesFlags::DEFAULT );```
 
 # Webcam_point_features program
 
@@ -24,8 +24,8 @@ Un cop creat la nostre carpeta de treball comencem a realitzar modificacions en 
 
 La primera modificació que fem es pasar la imatge amb color a una escala de grisos
 
-``` bash cv::Mat grayimage;```
-``` bash cv::cvtColor( image, grayimage, CV_BGR2GRAY );```
+```cv::Mat grayimage;```
+```cv::cvtColor( image, grayimage, CV_BGR2GRAY );```
 
 Abans de començar a crear la màscara fem proves per cambiar el color de les KeyPoints
 
@@ -33,20 +33,20 @@ Declarem una variable Color que es "Scalar" i definim la intencitat de cada un d
 
 En el nostre cas posem el valor (0,255,0) que es el color Green
 
-``` bash Scalar Color = Scalar(0,255,0);```
+```Scalar Color = Scalar(0,255,0);```
 
 Per poder realitzar una zona exclusiva dins la imatge per posar els KeyPoints ho fem a través d'una mascara i una variable roi
 
 A continuació es veuen les dos comandes que fem per realitzar un escaneig dels features points amb una mascar en forma de rectangle
 
-``` bash cv::Mat Mask;```
-``` bash cv::Mat roi;```
+```cv::Mat Mask;```
+```cv::Mat roi;```
 
 En aquest punt hem creat les variables que utilitzarem
 
-``` Mat Mask = Mat::zeros(image.size(), CV_8U);```
-``` Mat roi(Mask, cv::Rect(250,150,220,300));```
-``` Mat roi = Scalar(255);```
+```Mat Mask = Mat::zeros(image.size(), CV_8U);```
+```Mat roi(Mask, cv::Rect(250,150,220,300));```
+```Mat roi = Scalar(255);```
 
 Col·loquem zeros en tota la imatge que capturem i li pasem una Mascara rectangular que té posició d'inici i el tamany
 
