@@ -47,15 +47,18 @@ El resultat és la imatge de la web cam amb escala de grisos i una zona central 
 
 Aqui adjuntem les principals referencies que hem utilitzat per poder realitzar aquesta modificació en el programa webcam_point_features
 
-··· https://es.wikipedia.org/wiki/RGB
+<ol>
+  
+<li>https://es.wikipedia.org/wiki/RGB</li>
 
-... https://docs.opencv.org/3.3.0/d3/d96/tutorial_basic_geometric_drawing.html
+<li>https://docs.opencv.org/3.3.0/d3/d96/tutorial_basic_geometric_drawing.html</li>
 
-... https://docs.opencv.org/2.4/doc/tutorials/core/mat_the_basic_image_container/mat_the_basic_image_container.html
+<li>https://docs.opencv.org/2.4/doc/tutorials/core/mat_the_basic_image_container/mat_the_basic_image_container.html</li>
 
-... https://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html
+<li>https://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html</li>
 
-... http://answers.opencv.org/question/10364/set-roi-in-cvmat/
+<li>http://answers.opencv.org/question/10364/set-roi-in-cvmat/</li>
 
+</ol>
 
 
