@@ -45,7 +45,9 @@ A continuació es veuen les dos comandes que fem per realitzar un escaneig dels 
 En aquest punt hem creat les variables que utilitzarem
 
 ```Mat Mask = Mat::zeros(image.size(), CV_8U);```
+
 ```Mat roi(Mask, cv::Rect(250,150,220,300));```
+
 ```Mat roi = Scalar(255);```
 
 Col·loquem zeros en tota la imatge que capturem i li pasem una Mascara rectangular que té posició d'inici i el tamany
