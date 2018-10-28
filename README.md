@@ -47,7 +47,7 @@ El resultat és la imatge de la web cam amb escala de grisos i una zona central 
 
 Aqui adjuntem les principals referencies que hem utilitzat per poder realitzar aquesta modificació en el programa webcam_point_features
 
-...https://es.wikipedia.org/wiki/RGB
+··· https://es.wikipedia.org/wiki/RGB
 
 ... https://docs.opencv.org/3.3.0/d3/d96/tutorial_basic_geometric_drawing.html
 
