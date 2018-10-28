@@ -43,4 +43,19 @@ Un cop realitzades aquestes comandes compilem per veure que no hi hagi cap error
 
 El resultat és la imatge de la web cam amb escala de grisos i una zona central de la imatge on només apareixen els KeyPoints. Aquesta zona és la que hem definit amb la posició + tamany del rectangle
 
+# Used References
+
+Aqui adjuntem les principals referencies que hem utilitzat per poder realitzar aquesta modificació en el programa webcam_point_features
+
+... https://es.wikipedia.org/wiki/RGB
+
+... https://docs.opencv.org/3.3.0/d3/d96/tutorial_basic_geometric_drawing.html
+
+... https://docs.opencv.org/2.4/doc/tutorials/core/mat_the_basic_image_container/mat_the_basic_image_container.html
+
+... https://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html
+
+... http://answers.opencv.org/question/10364/set-roi-in-cvmat/
+
+
 
